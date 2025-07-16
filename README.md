@@ -1,28 +1,58 @@
-# Smart-Irrigation-System-for-Optimal-Crop-Management
+# 🌱 Smart Irrigation System for Optimal Crop Management
 
-An IoT-powered system to automate and optimize crop irrigation using soil moisture sensors, water level monitoring, smart scheduling, real-time notifications, and a mobile app. Built with NodeMCU, Firebase, and GSM, the system aims to reduce water wastage, save labor, and improve agricultural efficiency.
+An IoT-based irrigation system using **NodeMCU**, **Firebase**, and **GSM** to automate crop watering based on real-time soil moisture levels. The system supports multiple irrigation modes, remote control via mobile app, and SMS alerts—aimed at reducing water usage and enhancing farm efficiency.
 
-🚀 Features
-Real-time soil moisture monitoring (4 lines)
-Water tank level sensing
-Three irrigation modes: Manual, Automatic, Optimal
-Firebase Realtime Database for remote control
-SMS alerts using GSM module (SIM800L)
-LCD display for local status feedback
-Scheduling system based on last irrigation date
-Fertilizer recommendations and climate notifications
-Data logging and visualization via ThingSpeak.
-⚙️ How to Use
-Flash Arduino Code:
+---
 
-Upload NodeMCU_1_MainController.ino to the main NodeMCU.
-Upload NodeMCU_2_GSM_LCD_Controller.ino to the second NodeMCU.
-Also where ever you see long ---------- their you need to make changes
-Setup Firebase:
+## 🚀 Key Features
 
-Create a Firebase project and structure it based on firebase_structure.json/png in /Firebase_Config/.
-Use the Mobile App:
+- 📡 Real-time soil moisture monitoring (4 zones)
+- 💧 Water tank level detection using ultrasonic sensor
+- 🔄 Manual, Automatic, and Optimal irrigation modes
+- ☁️ Firebase Realtime Database for remote access
+- 📲 SMS alerts via SIM800L GSM module
+- 📟 Local LCD display for live system status
+- 📅 Scheduling based on last irrigation date
+- 🌦️ Climate tips and fertilizer recommendations
+- 📊 ThingSpeak data logging & visualization
 
-Import Smart_Irrigation_System (2).aia into MIT App Inventor.
-Replace Firebase API key with your api key
-Power up: -Connect sensors, relays, and modules as per the circuit. -Ensure Wi-Fi credentials and Firebase API keys are correctly set in the Arduino code.
+---
+
+## ⚙️ Setup Instructions
+
+### 1. Flash the Arduino Code
+
+- Upload `NodeMCU_1_MainController.ino` to the **main NodeMCU**.
+- Upload `NodeMCU_2_GSM_LCD_Controller.ino` to the **secondary NodeMCU**.
+- Update Wi-Fi, Firebase, and GSM details in the `.ino` files (look for `----------` comments).
+
+### 2. Configure Firebase
+
+- Set up a Firebase project and structure the DB as shown in `/Firebase_Config/firebase_structure.png`.
+- Insert your API key and DB URL in both Arduino and mobile app files.
+
+### 3. Import the Mobile App
+
+- Open [MIT App Inventor](https://ai2.appinventor.mit.edu/).
+- Import `Smart_Irrigation_System (2).aia`.
+- Replace Firebase keys with your own.
+
+### 4. Circuit & Power
+
+- Connect all sensors and modules as per circuit diagram.
+- Power up both NodeMCUs (USB/adapter).
+- System boots and starts monitoring.
+
+---
+
+## 📦 Components Used
+
+- NodeMCU (x2)
+- SIM800L GSM module
+- 4 Soil Moisture Sensors
+- Ultrasonic sensor (for tank)
+- 4-Channel Relay Module
+- LCD Display (I2C)
+- Firebase, ThingSpeak, MIT App Inventor
+
+---
